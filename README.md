@@ -1,0 +1,2 @@
+# test_haru
+bike_reservation_test_site
