@@ -1,0 +1,38 @@
+{% extends 'layout/common_layout.html' %}
+{% block title %} 투개더 로그인 {% endblock %}
+{% block css %}
+<link rel = "stylesheet" href = "{{url_for('static', filename = 'css/login.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class = "header">
+      로그인 ♧
+    </div>
+
+  <div class = "contents_container">
+
+    <form action= "/login" method="POST" class = "login_inp_container">
+      <input type="text" inputmode="numeric" class = "order_number" placeholder="네이버 주문번호" required>
+      <button type="button" class="btn-help" id="btnOpenModal">주문번호 확인 방법 ⓘ</button>
+      <button class = "login_btn">로그인 ♧</button>
+
+    <div class = "store_banner">
+      <a href="tel:0507-1319-3251" class ="banner_call_link">
+        <img src ="{{url_for('static', filename='img/두레통닭.png')}}" class="banner_img">
+      </a>
+    </div>
+  </div>
+
+  <div class = "footer">
+    <p>
+      <a href = "#" class = "footer-link" id = "open-terms">이용안내</a>|
+      <a href = "#" class = "footer-link" id = "open-privacy">개인정보처리방침</a>|
+      <a href = "#" class = "footer-link" id = "open-copyright">저작권정책</a>
+      <br>
+      니딩컴퍼니 문의전화 : 010-7906-4707<br>
+      © 2026 TOGATHER. All rights reserved.
+    </p>
+  </div>
+
+  </div>
+{% endblock %}
