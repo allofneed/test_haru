@@ -61,6 +61,23 @@
     </div>
   </div>
 </div>
+
+<div id="qrModal" class="qr-modal-overlay">
+  <div class="qr-modal-header">
+    <ion-icon name="close-outline" id="closeQrBtn" class="close-btn"></ion-icon>
+    <h3>매장 QR 스캔</h3>
+    <div style="width: 24px;"></div> </div>
+  
+  <div class="qr-scanner-area">
+    <div class="scanner-frame">
+      <div class="scan-line"></div> </div>
+    <p>매장에 비치된 QR코드를<br>사각 프레임 안에 맞춰주세요.</p>
+  </div>
+  
+  <div class="qr-modal-bottom">
+    <button class="qr-flash-btn"><ion-icon name="flashlight-outline"></ion-icon></button>
+  </div>
+</div>
 {% endblock %}
 
 {% block bottom_nav %}

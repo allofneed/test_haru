@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. 지도부터 무조건 띄웁니다! (기본 시흥시 좌표)
+    // 1. 지도부터 띄웁니다 (기본 시흥시 좌표)
     const map = L.map('realMap', { zoomControl: false }).setView([37.3801, 126.8029], 15);
 
-    // 2. 배경 지도 타일 바로 깔아주기
+    // 2. 타일 깔기
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '© OpenStreetMap'
@@ -31,24 +31,25 @@ document.addEventListener('DOMContentLoaded', () => {
         iconAnchor: [40, 45]
     });
 
-    // 3. 내 위치 불러오기 함수
-    function loadRealLocation() {
+    // 3. 🌟 위치 찾기 및 이동 함수 (강력 업데이트)
+    function fetchAndGoToLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const lat = position.coords.latitude;
                     const lng = position.coords.longitude;
                     
-                    // 지도를 내 위치로 스무스하게 이동
-                    map.flyTo([lat, lng], 16);
+                    // 🌟 지도를 드래그해 뒀어도, 이 함수가 실행되면 내 위치로 부드럽게 날아감!
+                    map.flyTo([lat, lng], 16, {
+                        animate: true,
+                        duration: 0.8 
+                    });
 
-                    // 기존 마커 지우기
+                    // 내 위치 마커 갱신
                     if (userMarker) map.removeLayer(userMarker);
-
-                    // 새 위치 마커 꽂기
                     userMarker = L.marker([lat, lng], { icon: myLocIcon }).addTo(map);
 
-                    // 가짜 핫플들 (내 위치 주변에 뿌림)
+                    // 가짜 핫플들 (내 위치 주변에 다시 세팅)
                     L.marker([lat + 0.002, lng - 0.002], { icon: createCustomIcon('cafe', '#e67e22') }).addTo(map);
                     L.marker([lat - 0.001, lng + 0.003], { icon: createCustomIcon('restaurant', '#e74c3c') }).addTo(map);
                     L.marker([lat + 0.003, lng + 0.001], { icon: createCustomIcon('bed', '#1abc9c') }).addTo(map);
@@ -56,24 +57,56 @@ document.addEventListener('DOMContentLoaded', () => {
                 (error) => {
                     console.log("GPS 권한 대기 중이거나 거부됨");
                 },
-                { timeout: 5000 } // 5초 안에 안 되면 무시
+                { 
+                    enableHighAccuracy: true, // 🌟 GPS 정확도 최대로!
+                    timeout: 5000, 
+                    maximumAge: 0 // 🌟 캐시된 예전 위치 무시하고 즉시 새로 측정!
+                }
             );
         }
     }
 
-    // 4. 로딩되자마자 내 위치 한 번 찾기
-    loadRealLocation();
+    // 4. 로딩되자마자 한 번 실행
+    fetchAndGoToLocation();
 
-    // 5. GPS 버튼 누르면 다시 내 위치 찾기
+    // 5. 🌟 강아지 발바닥 버튼 클릭 이벤트 확실하게 연결!
     const gpsBtn = document.getElementById('gpsBtn');
     if(gpsBtn) {
-        gpsBtn.addEventListener('click', () => {
+        gpsBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // 기본 동작 방지
+            
+            // 시각적 피드백 (버튼이 쏙 눌리는 효과)
             gpsBtn.style.transform = 'scale(0.8)';
             setTimeout(() => gpsBtn.style.transform = 'scale(1)', 150);
-            loadRealLocation();
+            
+            // 클릭할 때마다 위치 다시 찾아서 스무스하게 이동!
+            fetchAndGoToLocation();
         });
     }
 
-    // 🌟 회색 에러 방지용: 지도가 화면에 그려진 후 사이즈 재계산
+    // 지도가 화면에 정상적으로 그려지도록 크기 재계산
     setTimeout(() => { map.invalidateSize(); }, 500);
 });
+
+
+
+// ==========================================
+    // 🌟 QR 코드 모달 열기/닫기 로직
+    // ==========================================
+    // 바텀 네비게이션의 5번째 요소 (QR코드 버튼) 찾기
+    const qrNavItem = document.querySelectorAll('.navigation ul li')[4];
+    const qrModal = document.getElementById('qrModal');
+    const closeQrBtn = document.getElementById('closeQrBtn');
+
+    if(qrNavItem && qrModal && closeQrBtn) {
+        // QR 메뉴 클릭 시 모달 열기
+        qrNavItem.addEventListener('click', (e) => {
+            e.preventDefault(); // 기본 링크 이동 막기
+            qrModal.classList.add('show');
+        });
+
+        // X 버튼 클릭 시 모달 닫기
+        closeQrBtn.addEventListener('click', () => {
+            qrModal.classList.remove('show');
+        });
+    }
