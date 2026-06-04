@@ -6,7 +6,7 @@
 
 {% block content %}
     <div class = "header">
-      로그인 페이지 ♧
+      로그인 페이지 <img src ="{{url_for('static', filename='svg/dog_foot.svg')}}" class = "text_icon">
     </div>
 
     <div class = "logo_container">
@@ -18,8 +18,7 @@
     <form action= "/login" method="POST" class = "login_inp_container">
       <input type="text" inputmode="numeric" class = "order_number" placeholder="네이버 주문번호" required>
       <button type="button" class="btn-help" id="btnOpenModal">주문번호 확인 방법 ⓘ</button>
-      <button class = "login_btn">로그인 ♧</button>
-
+      <button class = "login_btn">로그인<img src ="{{url_for('static', filename='svg/dog_foot.svg')}}" class = "text_icon"></button>
     <div class = "store_banner">
       <a href="tel:0507-1319-3251" class ="banner_call_link">
         <img src ="{{url_for('static', filename='img/chicken_banner.png')}}" class="banner_img">

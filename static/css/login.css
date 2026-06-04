@@ -5,70 +5,29 @@
   background-image: url('/static/img/togather_backgroud.png');
 }
 
-.header {
-    text-align: center; 
-    font-size: 18px;    
-    padding: 20px 0; 
-    border-bottom: 1px solid #dbdbdb;
-    margin-bottom: 10px;
-    color: white;
-}
+/* top_headerpart */
+.header {text-align: center; font-size: 18px; padding: 20px 0; 
+border-bottom: 1px solid #dbdbdb; margin-bottom: 10px; color: white;}
+.text_icon{display: inline-block; width: 25px; height: auto; vertical-align: middle;
+margin-left: 5px ;}
 
 .main_logo{width: 40%; max-width: 100%; height: auto; display: block; margin: 30px auto;}
 
 
-.contents_container{
-  padding: 10px 20px;
-  gap: 0 100px;
-  display: flex;
-  flex-direction: column; 
-}
+.contents_container{padding: 10px 20px; gap: 0 100px; display: flex; flex-direction: column;}
 
-.logo_logo{
-  display:flex;
-  width: 100%;
-  padding: 10px;
-}
+.login_inp_container{display: flex; flex-direction: column; width: 100%; flex:1; cursor: pointer; gap: 10px; 
+  margin-bottom: 20px;}
 
-.login_inp_container{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex:1;
-  cursor: pointer;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.order_number{
-  padding: 0 15px;
-  height: 45px;
-  border-radius: 5px;
-  border : 1px solid #78b252;
-  color: black;
-}
+.order_number{padding: 0 15px; height: 45px; border-radius: 5px; border : 1px solid #3b82f6; color: black;}
 .btn-help{
   background: none; border: none; font-size: 13px; font-weight: 600; 
   color: #868E96;text-decoration: underline; cursor: pointer;}
 
 /* 로그인 버튼 스타일 */
-.login_btn {
-    width: 100%;             
-    height: 50px;       
-    
-    background-color: #8C643D; 
-    color: #ffffff;         
-    font-size: 16px;        
-    font-weight: bold;       
-    
-    border: none;            
-    border-radius: 8px;    
-    cursor: pointer;       
-}
-
-.login_btn:hover {
-    background-color: #555555;
-}
+.login_btn {width: 100%; height: 50px; background: linear-gradient(135deg, #ff7e40, #ff5100);
+color: #ffffff; font-size: 16px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer;}
+.login_btn .text_icon{filter:brightness(0) invert(1);}
 
 
 .store_banner{
