@@ -1,44 +1,93 @@
-/* ==========================================
-   1. 지도(GPS) 영역 (화면의 약 60% 차지)
-   ========================================== */
-.map-container {
-    width: 100%;
-    height: 55vh; 
-    background: #e5e3df; 
-    position: relative;
-    overflow: hidden;
-    background-image: radial-gradient(#d5d3cf 1px, transparent 1px);
-    background-size: 20px 20px;
+/* 공통 레이아웃 */
+body {
+    background-color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* 내 위치 마커 (빨간색 펄스 효과) */
+/* 1. 환영 메시지 */
+.greeting-section {
+    padding: 20px 20px 15px 20px;
+}
+.greeting-section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.4;
+    margin: 0;
+}
+.greeting-section .highlight {
+    color: #e74c3c;
+}
+
+/* 2. 지도 영역 */
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 35vh; /* 지도 높이 조절 */
+    background: #e5e3df;
+}
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* 주변 탐색 배지 */
+.search-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #2c3e50;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* 내 위치 마커 (툴팁 + 점) */
 .marker-me {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 18px;
-    height: 18px;
-    background-color: #ff3b30;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
     z-index: 10;
-    animation: pulse 1.5s infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.marker-me .tooltip {
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    margin-bottom: 5px;
+}
+.marker-me .dot {
+    width: 16px;
+    height: 16px;
+    background: #3498db;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
 }
 
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(255, 59, 48, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
-}
-
-/* 주변 애견동반 매장 마커 (오렌지 핀) */
+/* 가짜 매장 핀들 */
 .marker-store {
     position: absolute;
-    width: 32px;
-    height: 32px;
-    background-color: #ff7e40;
+    width: 30px;
+    height: 30px;
     color: white;
     border-radius: 50% 50% 50% 0;
     transform: rotate(-45deg);
@@ -46,97 +95,147 @@
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    z-index: 10;
 }
+.marker-store ion-icon { transform: rotate(45deg); font-size: 16px; }
+.pos-cafe { top: 30%; left: 40%; background: #e67e22; }
+.pos-food { top: 40%; left: 70%; background: #e74c3c; }
+.pos-bed { top: 65%; left: 30%; background: #1abc9c; }
 
-.marker-store ion-icon {
-    transform: rotate(45deg);
-    font-size: 18px;
-}
-
-/* 가짜 매장 위치들 (나중에 실제 지도 API가 알아서 배치함) */
-.pos-1 { top: 35%; left: 30%; }
-.pos-2 { top: 65%; left: 65%; }
-.pos-3 { top: 25%; left: 75%; background-color: #34c759; }
-
-/* ==========================================
-   2. 주변 매장 가로 슬라이더 영역
-   ========================================== */
-.store-slider-container {
-    padding: 15px 0 15px 15px;
-    background: #fffeee; 
-    height: calc(100vh - 55vh - 70px); 
-    min-height: 220px;
-    display: flex;
-    flex-direction: column;
-}
-
-.slider-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-    color: #222;
-}
-
-.store-slider {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto; 
-    padding-bottom: 10px;
-    padding-right: 15px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.store-slider::-webkit-scrollbar {
-    display: none;
-}
-
-.store-card {
-    min-width: 150px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0; 
-}
-
-.store-img {
-    width: 100%;
-    height: 100px;
+/* 우측 하단 강아지(GPS) 버튼 */
+.gps-fab {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    background: #fff;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 2.5rem;
+    font-size: 24px;
+    color: #3498db;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 15;
+    cursor: pointer;
 }
 
-.store-info {
+/* 3. 하단 콘텐츠 영역 */
+.content-wrapper {
+    padding: 15px 0 100px 15px; /* 바텀 네비게이션 가림 방지 */
+}
+
+/* 필터 버튼 */
+.filter-chips {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-right: 15px;
+}
+.filter-chips::-webkit-scrollbar { display: none; }
+.chip {
+    padding: 8px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    background: #fff;
+    color: #555;
+    font-weight: 600;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+.chip.active {
+    background: #16423C;
+    color: #fff;
+    border-color: #16423C;
+}
+
+/* 카드 슬라이더 */
+.store-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 10px;
+    padding-right: 15px;
+}
+.store-slider::-webkit-scrollbar { display: none; }
+
+.store-card {
+    min-width: 220px; /* 카드 너비 */
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img {
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-info {
     padding: 12px;
 }
 
-.store-name {
-    font-size: 0.95rem;
+.c-title {
+    font-size: 1.05rem;
     font-weight: 700;
-    color: #333;
+    color: #222;
     margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-.store-tags {
-    font-size: 0.75rem;
-    color: #ff7e40;
-    font-weight: 500;
-}
-
-.store-dist {
+.c-addr {
     font-size: 0.75rem;
     color: #888;
-    margin-top: 8px;
     display: flex;
     align-items: center;
     gap: 3px;
+    margin-bottom: 8px;
+}
+
+.c-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    color: #e74c3c;
+    border: 1px solid #fbdcda;
+    background: #fffafa;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.c-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.c-dist {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.c-btn {
+    background: #16423C;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8rem;
 }

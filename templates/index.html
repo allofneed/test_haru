@@ -6,73 +6,74 @@
 {% endblock %}
 
 {% block content %}
-  <div class="header">
-    홈
-  </div>
+<div class="header">
+  홈
+</div>
 
-  <div class="map-container">
-    <iframe 
-      src="https://maps.google.com/maps?q=강남역&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-      style="width: 100%; height: 100%; border: 0; position: absolute; top: 0; left: 0; z-index: 1;"
-      allowfullscreen="" 
-      loading="lazy">
-    </iframe>
+<div class="greeting-section">
+  <h2><span class="highlight">홍길동</span> 보호자님,<br>시흥 방문을 환영합니다!</h2>
+</div>
 
-    <div class="marker-me"></div>
-    
-    <div class="marker-store pos-1"><ion-icon name="paw"></ion-icon></div>
-    <div class="marker-store pos-2"><ion-icon name="cafe"></ion-icon></div>
-    <div class="marker-store pos-3"><ion-icon name="restaurant"></ion-icon></div>
-    <div class="marker-store pos-4"><ion-icon name="basket"></ion-icon></div>
-    <div class="marker-store pos-5"><ion-icon name="bed"></ion-icon></div>
-
-    <div class="gps-button">
-      <ion-icon name="locate-outline"></ion-icon>
-    </div>
-  </div>
-
-<div class="store-slider-container">
-  <div class="slider-title">🐶 내 주변 댕댕이 핫플</div>
+<div class="map-wrapper">
+  <div class="search-badge"><ion-icon name="locate"></ion-icon> 주변 탐색 중</div>
   
+  <iframe 
+    id="realMap"
+    src="" 
+    allowfullscreen="" 
+    loading="lazy">
+  </iframe>
+
+  <div class="marker-me">
+    <div class="tooltip">현재 내 위치</div>
+    <div class="dot"></div>
+  </div>
+  
+  <div class="marker-store pos-cafe"><ion-icon name="cafe"></ion-icon></div>
+  <div class="marker-store pos-food"><ion-icon name="restaurant"></ion-icon></div>
+  <div class="marker-store pos-bed"><ion-icon name="bed"></ion-icon></div>
+
+  <div class="gps-fab" id="gpsBtn">
+    <ion-icon name="paw"></ion-icon>
+  </div>
+</div>
+
+<div class="content-wrapper">
+  <div class="filter-chips">
+    <button class="chip active">전체</button>
+    <button class="chip">카페</button>
+    <button class="chip">음식점</button>
+    <button class="chip">숙소</button>
+  </div>
+
   <div class="store-slider">
     <div class="store-card">
-      <div class="store-img" style="background: #ffb88c;"><ion-icon name="cafe-outline"></ion-icon></div>
-      <div class="store-info">
-        <div class="store-name">멍멍 브루어리</div>
-        <div class="store-tags">#애견동반 #디저트</div>
-        <div class="store-dist"><ion-icon name="location-outline"></ion-icon> 200m</div>
+      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80');"></div>
+      <div class="card-info">
+        <div class="c-title">멍멍카페 시흥점</div>
+        <div class="c-addr"><ion-icon name="location-outline"></ion-icon> 시흥시 정왕동 123-4</div>
+        <div class="c-badge"><ion-icon name="ticket-outline"></ion-icon> 음료 10% 할인</div>
+        <div class="c-bottom">
+          <div class="c-dist"><ion-icon name="walk-outline"></ion-icon> 134m</div>
+          <button class="c-btn">방문하기</button>
+        </div>
       </div>
     </div>
     
     <div class="store-card">
-      <div class="store-img" style="background: #a8e063;"><ion-icon name="restaurant-outline"></ion-icon></div>
-      <div class="store-info">
-        <div class="store-name">해피 테일즈 식당</div>
-        <div class="store-tags">#대형견환영 #양식</div>
-        <div class="store-dist"><ion-icon name="location-outline"></ion-icon> 450m</div>
-      </div>
-    </div>
-    
-    <div class="store-card">
-      <div class="store-img" style="background: #56ccf2;"><ion-icon name="barbell-outline"></ion-icon></div>
-      <div class="store-info">
-        <div class="store-name">도기 런 파크</div>
-        <div class="store-tags">#야외운동장 #수영장</div>
-        <div class="store-dist"><ion-icon name="location-outline"></ion-icon> 1.2km</div>
-      </div>
-    </div>
-    
-     <div class="store-card">
-      <div class="store-img" style="background: #f2c94c;"><ion-icon name="storefront-outline"></ion-icon></div>
-      <div class="store-info">
-        <div class="store-name">바둑이 간식상회</div>
-        <div class="store-tags">#수제간식 #장난감</div>
-        <div class="store-dist"><ion-icon name="location-outline"></ion-icon> 2.0km</div>
+      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=400&q=80');"></div>
+      <div class="card-info">
+        <div class="c-title">댕댕이 다이닝</div>
+        <div class="c-addr"><ion-icon name="location-outline"></ion-icon> 시흥시 장현동 567-8</div>
+        <div class="c-badge"><ion-icon name="ticket-outline"></ion-icon> 애견 수제 간식 증정</div>
+        <div class="c-bottom">
+          <div class="c-dist"><ion-icon name="walk-outline"></ion-icon> 240m</div>
+          <button class="c-btn">방문하기</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}
 
 {% block bottom_nav %}
