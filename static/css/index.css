@@ -1,0 +1,142 @@
+/* ==========================================
+   1. 지도(GPS) 영역 (화면의 약 60% 차지)
+   ========================================== */
+.map-container {
+    width: 100%;
+    height: 55vh; 
+    background: #e5e3df; 
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(#d5d3cf 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* 내 위치 마커 (빨간색 펄스 효과) */
+.marker-me {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    background-color: #ff3b30;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
+    z-index: 10;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 59, 48, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+/* 주변 애견동반 매장 마커 (오렌지 핀) */
+.marker-store {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #ff7e40;
+    color: white;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+.marker-store ion-icon {
+    transform: rotate(45deg);
+    font-size: 18px;
+}
+
+/* 가짜 매장 위치들 (나중에 실제 지도 API가 알아서 배치함) */
+.pos-1 { top: 35%; left: 30%; }
+.pos-2 { top: 65%; left: 65%; }
+.pos-3 { top: 25%; left: 75%; background-color: #34c759; }
+
+/* ==========================================
+   2. 주변 매장 가로 슬라이더 영역
+   ========================================== */
+.store-slider-container {
+    padding: 15px 0 15px 15px;
+    background: #fffeee; 
+    height: calc(100vh - 55vh - 70px); 
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.store-slider {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; 
+    padding-bottom: 10px;
+    padding-right: 15px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.store-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.store-card {
+    min-width: 150px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0; 
+}
+
+.store-img {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.store-info {
+    padding: 12px;
+}
+
+.store-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.store-tags {
+    font-size: 0.75rem;
+    color: #ff7e40;
+    font-weight: 500;
+}
+
+.store-dist {
+    font-size: 0.75rem;
+    color: #888;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
