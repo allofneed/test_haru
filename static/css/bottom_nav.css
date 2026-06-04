@@ -2,7 +2,7 @@
     width: 360px;
     height: 70px;
     background: #ff7e40;
-    position: absolute;
+    position: fixed; 
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
@@ -11,6 +11,7 @@
     align-items: center;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(255, 126, 64, 0.3);
+    z-index: 9999; 
 }
 
 .navigation ul {
