@@ -25,7 +25,7 @@
     list-style: none;
     width: 60px;
     height: 70px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .navigation ul li a {
@@ -51,8 +51,8 @@
 }
 
 .navigation ul li.active a .icon {
-    transform: translateY(-32px);
-    color: #ff7e40;
+    transform: translateY(-28px);
+    color: #ffffff;
 }
 
 .navigation ul li a .text {
@@ -67,43 +67,92 @@
 }
 
 .navigation ul li.active a .text {
-    transform: translateY(10px);
+    transform: translateY(12px);
     opacity: 1;
 }
 
 .indicator {
     position: absolute;
-    top: -50%;
-    width: 60px;
-    height: 60px;
-    background: #ffffff;
+    top: -22px;
+    width: 66px;
+    height: 66px;
+    background: #fffeee;
     border-radius: 50%;
-    border: 6px solid #fffeee;
     transition: 0.5s;
+    z-index: 1;
+}
+
+.paw-main {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 28px;
+    background: #ff7e40;
+    border-radius: 50% 50% 45% 45% / 40% 40% 60% 60%;
+}
+
+.toe {
+    position: absolute;
+    background: #ff7e40;
+    border-radius: 50%;
+}
+
+.toe1 {
+    width: 10px;
+    height: 14px;
+    top: 18px;
+    left: 9px;
+    transform: rotate(-35deg);
+}
+
+.toe2 {
+    width: 12px;
+    height: 17px;
+    top: 10px;
+    left: 20px;
+    transform: rotate(-10deg);
+}
+
+.toe3 {
+    width: 12px;
+    height: 17px;
+    top: 10px;
+    right: 20px;
+    transform: rotate(10deg);
+}
+
+.toe4 {
+    width: 10px;
+    height: 14px;
+    top: 18px;
+    right: 9px;
+    transform: rotate(35deg);
 }
 
 .indicator::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: -22px;
+    top: 22px;
+    left: -20px;
     width: 20px;
     height: 20px;
     background: transparent;
-    border-top-right-radius: 20px;
-    box-shadow: 1px -10px 0 0 #fffeee;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 10px 0 0 #ff7e40;
 }
 
 .indicator::after {
     content: '';
     position: absolute;
-    top: 50%;
-    right: -22px;
+    top: 22px;
+    right: -20px;
     width: 20px;
     height: 20px;
     background: transparent;
-    border-top-left-radius: 20px;
-    box-shadow: -1px -10px 0 0 #fffeee;
+    border-bottom-left-radius: 20px;
+    box-shadow: 0 10px 0 0 #ff7e40;
 }
 
 .navigation ul li:nth-child(1).active ~ .indicator { transform: translateX(calc(60px * 0)); }
