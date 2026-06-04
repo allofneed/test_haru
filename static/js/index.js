@@ -89,24 +89,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-// ==========================================
-    // 🌟 QR 코드 모달 열기/닫기 로직
-    // ==========================================
-    // 바텀 네비게이션의 5번째 요소 (QR코드 버튼) 찾기
     const qrNavItem = document.querySelectorAll('.navigation ul li')[4];
     const qrModal = document.getElementById('qrModal');
     const closeQrBtn = document.getElementById('closeQrBtn');
+    const video = document.getElementById('cameraPreview');
+    let localStream = null; // 카메라 스트림 저장용 변수
 
-    if(qrNavItem && qrModal && closeQrBtn) {
-        // QR 메뉴 클릭 시 모달 열기
-        qrNavItem.addEventListener('click', (e) => {
-            e.preventDefault(); // 기본 링크 이동 막기
+    if(qrNavItem && qrModal && closeQrBtn && video) {
+        // 1. QR 메뉴 클릭 시 모달 열고 카메라 켜기
+        qrNavItem.addEventListener('click', async (e) => {
+            e.preventDefault();
             qrModal.classList.add('show');
+
+            try {
+                // 스마트폰의 후면 카메라(environment)를 우선적으로 요청
+                localStream = await navigator.mediaDevices.getUserMedia({
+                    video: { facingMode: "environment" },
+                    audio: false
+                });
+                video.srcObject = localStream;
+            } catch (err) {
+                console.error("카메라를 켤 수 없습니다:", err);
+                alert("카메라 권한을 허용해주셔야 실시간 스캔 화면을 볼 수 있습니다.");
+            }
         });
 
-        // X 버튼 클릭 시 모달 닫기
+        // 2. X 버튼 클릭 시 모달 닫고 카메라 끄기 (종료 필수!)
         closeQrBtn.addEventListener('click', () => {
             qrModal.classList.remove('show');
+            
+            // 모달을 닫을 때 카메라 장치를 확실하게 꺼줍니다 (배터리 절약 및 보안)
+            if (localStream) {
+                localStream.getTracks().forEach(track => track.stop());
+                video.srcObject = null;
+            }
         });
     }
