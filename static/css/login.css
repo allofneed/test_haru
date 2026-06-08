@@ -9,7 +9,7 @@
 .main-logo { width: 40%; max-width: 100%; height: auto; display: block; margin: 30px auto; }
 
 /* contents-container (배경을 더 찐하게 보정 및 흐림 효과 강화) */
-.contents-container { width: 90%; max-width: 380px; margin: 0 auto; padding: 30px 24px; background-color: rgba(15, 11, 28, 0.78); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.contents-container { width: 90%; max-width: 380px; margin: 0 auto; padding: 30px 24px; background-color: rgba(15, 11, 28, 0.20); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
 /* login-input-container */
 .login-inp-container { display: flex; flex-direction: column; width: 100%; gap: 12px; margin-bottom: 20px; }
