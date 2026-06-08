@@ -2,6 +2,8 @@
 {% block title %} 투개더 로그인 {% endblock %}
 {% block css %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/common_modal.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 {% endblock %}
 
 {% block content %}
@@ -20,8 +22,8 @@
 
     <div class="bef-reservation-container">
       <div class="reservation-divider">아직 예약 전이신가요?</div>
-      <a href="https://smartstore.naver.com/haru_space/products/13141237083" class="sub-btn reservation-link">실시간 예약 바로가기</a>
-      <div class="sub-btn question-btn" id="btn-open-faq">자주하는 질문 확인</div>
+      <a href="https://smartstore.naver.com/haru_space/products/13141237083" class="sub-btn reservation-link"><i class="fas fa-calendar-alt"></i>실시간 예약 바로가기</a>
+      <div class="sub-btn question-btn" id="btn-open-faq"><i class="fas fa-question-circle"></i>자주하는 질문 확인</div>
     </div>
   </div>
   
