@@ -1,187 +1,45 @@
 /* /login-page 내에서만 배경이미지 변경 */
-.mobile-container {
-  overflow: hidden;
-  box-sizing: border-box;
-  background-image: url('/static/img/togather_background.png');
-  background-size: cover;
-  background-position: center;
-}
+.mobile-container { overflow: hidden; box-sizing: border-box; background-image: url('/static/img/togather_background.png'); background-size: cover; background-position: center; }
 
 /* top-headerpart */
-.header {
-  text-align: center; 
-  font-size: 18px; 
-  padding: 20px 0; 
-  margin-bottom: 10px; 
-  color: white;
-}
-.text-icon {
-  display: inline-block; 
-  width: 25px; 
-  height: auto; 
-  vertical-align: middle;
-  margin-left: 5px; 
-  filter: brightness(0) invert(1);
-}
+.header { text-align: center; font-size: 18px; padding: 20px 0; margin-bottom: 10px; color: white; }
+.text-icon { display: inline-block; width: 25px; height: auto; vertical-align: middle; margin-left: 5px; filter: brightness(0) invert(1); }
 
 /* logo-container */
-.main-logo {
-  width: 40%; 
-  max-width: 100%; 
-  height: auto; 
-  display: block; 
-  margin: 30px auto;
-}
+.main-logo { width: 40%; max-width: 100%; height: auto; display: block; margin: 30px auto; }
 
-/* contents-container (메인 카드 박스) */
-.contents-container {
-  width: 90%; 
-  max-width: 380px; 
-  margin: 0 auto;
-  padding: 30px 24px; 
-  background-color: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.04); 
-  border-radius: 20px; 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
+/* contents-container (배경을 더 찐하게 보정 및 흐림 효과 강화) */
+.contents-container { width: 90%; max-width: 380px; margin: 0 auto; padding: 30px 24px; background-color: rgba(15, 11, 28, 0.78); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
 /* login-input-container */
-.login-inp-container {
-  display: flex; 
-  flex-direction: column; 
-  width: 100%; 
-  gap: 12px; 
-  margin-bottom: 20px;
-}
+.login-inp-container { display: flex; flex-direction: column; width: 100%; gap: 12px; margin-bottom: 20px; }
 
 /* 네이버 주문번호 입력창 스타일 */
-.order-number {
-  width: 100%;
-  padding: 0 15px; 
-  height: 48px; 
-  border-radius: 10px; 
-  border: 1px solid rgba(161, 140, 209, 0.3); 
-  background: rgba(0, 0, 0, 0.3);
-  color: #ffffff;
-  font-size: 14px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-.order-number:focus {
-  border-color: #fbc2eb;
-  box-shadow: 0 0 10px rgba(251, 194, 235, 0.2);
-  background: rgba(0, 0, 0, 0.5);
-}
-.order-number::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
+.order-number { width: 100%; padding: 0 15px; height: 48px; border-radius: 10px; border: 1px solid rgba(161, 140, 209, 0.4); background: rgba(0, 0, 0, 0.45); color: #ffffff; font-size: 14px; outline: none; transition: all 0.3s ease; }
+.order-number:focus { border-color: #fbc2eb; box-shadow: 0 0 10px rgba(251, 194, 235, 0.3); background: rgba(0, 0, 0, 0.65); }
+.order-number::placeholder { color: rgba(255, 255, 255, 0.4); }
 
 /* 주문번호 확인 방법 ⓘ 버튼 */
-.btn-help {
-  align-self: center;
-  background: none; 
-  border: none; 
-  font-size: 13px; 
-  font-weight: 600; 
-  color: #868E96;
-  text-decoration: underline; 
-  cursor: pointer;
-  margin-bottom: 4px;
-}
-.btn-help:hover {
-  color: #bfaed6;
-}
+.btn-help { align-self: center; background: none; border: none; font-size: 13px; font-weight: 600; color: #a0a5b0; text-decoration: underline; cursor: pointer; margin-bottom: 4px; }
+.btn-help:hover { color: #fbc2eb; }
 
 /* 로그인 버튼 스타일 (오로라 그라데이션) */
-.login-btn {
-  width: 100%; 
-  height: 50px; 
-  background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
-  color: #22143b; 
-  font-size: 15px; 
-  font-weight: bold; 
-  border: none; 
-  border-radius: 10px; 
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(161, 140, 209, 0.3);
-}
-.login-btn:hover {
-  opacity: 0.95;
-  transform: scale(0.99);
-  box-shadow: 0 6px 20px rgba(251, 194, 235, 0.4);
-}
-/* 로그인 버튼 안의 발자국 아이콘 색상 보정 */
-.btn-paw {
-  filter: brightness(0) opacity(0.7);
-}
+.login-btn { width: 100%; height: 50px; background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%); color: #22143b; font-size: 15px; font-weight: bold; border: none; border-radius: 10px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(161, 140, 209, 0.3); }
+.login-btn:hover { opacity: 0.95; transform: scale(0.99); box-shadow: 0 6px 20px rgba(251, 194, 235, 0.5); }
+.btn-paw { filter: brightness(0) opacity(0.7); }
 
 /* before-reservation-container */
-.bef-reservation-container {
-  display: flex; 
-  flex-direction: column; 
-  gap: 12px;
-}
+.bef-reservation-container { display: flex; flex-direction: column; gap: 12px; }
 
 /* 구분선 (아직 예약 전이신가요?) */
-.reservation-divider {
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  color: #a18cd1; 
-  font-size: 13px; 
-  font-weight: 500;
-  margin: 15px 0;
-}
-.reservation-divider::before, .reservation-divider::after {
-  content: ""; 
-  flex-grow: 1; 
-  height: 1px; 
-  background-color: rgba(161, 140, 209, 0.2);
-}
+.reservation-divider { display: flex; align-items: center; justify-content: center; color: #c4b5de; font-size: 13px; font-weight: 500; margin: 15px 0; }
+.reservation-divider::before, .reservation-divider::after { content: ""; flex-grow: 1; height: 1px; background-color: rgba(161, 140, 209, 0.3); }
 .reservation-divider::before { margin-right: 15px; }
 .reservation-divider::after { margin-left: 15px; }
 
-/* 하단 서브 버튼들 공통 스타일 (예약하러 가기 / 자주하는 질문) */
-.sub-btn {
-  display: flex; 
-  width: 100%; 
-  height: 48px; 
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(161, 140, 209, 0.25);
-  align-items: center; 
-  justify-content: center; 
-  font-size: 14px; 
-  font-weight: 500;
-  color: #e3dfff; 
-  border-radius: 10px; 
-  text-decoration: none;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-.sub-btn:hover {
-  background: rgba(161, 140, 209, 0.15);
-  border-color: rgba(251, 194, 235, 0.5);
-  color: #ffffff;
-}
+/* 하단 서브 버튼들 공통 스타일 (글자 가독성을 위해 테두리와 폰트 색상 살짝 선명하게 조정) */
+.sub-btn { display: flex; width: 100%; height: 48px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(161, 140, 209, 0.35); align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: #eae6ff; border-radius: 10px; text-decoration: none; box-sizing: border-box; cursor: pointer; transition: all 0.25s ease; }
+.sub-btn:hover { background: rgba(161, 140, 209, 0.2); border-color: rgba(251, 194, 235, 0.6); color: #ffffff; }
 
-/* 기존 사용 안 하는 클래스 유지보수용 (필요 없다면 지우셔도 됩니다) */
-.ticket-buy-inf {
-  width: 100%; 
-  height: 50px; 
-  background: linear-gradient(135deg, #ff7e40, #ff5100);
-  text-align: center;
-  align-items: center; 
-  justify-content: center;
-  color: #ffffff; 
-  font-size: 16px; 
-  font-weight: bold; 
-  border: none; 
-  border-radius: 8px; 
-  cursor: pointer;
-}
+/* 레거시 클래스 유지보수용 */
+.ticket-buy-inf { width: 100%; height: 50px; background: linear-gradient(135deg, #ff7e40, #ff5100); text-align: center; align-items: center; justify-content: center; color: #ffffff; font-size: 16px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; }
