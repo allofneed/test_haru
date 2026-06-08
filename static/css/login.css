@@ -38,9 +38,9 @@ font-size: 14px; margin: 20px 0;}
 .reservation_divider::before{margin-right:10px;}
 .reservation_divider::after{margin-left:10px;}
 
-.reservation{display: flex; width: 100%; height: 50px; background: #00b415;text-align: center;
-align-items: center; justify-content: center; font-size: 16px; color: #ffffff; border-radius: 8px;}
-.question{display: flex; width: 100%; height: 50px; background: #00b415;text-align: center;
+.reservation_btn{display: flex; width: 100%; height: 50px; background: #00b415;text-align: center;
+align-items: center; justify-content: center; font-size: 16px; color: #ffffff; border-radius: 8px; text-decoration: none;}
+.question_btn{display: flex; width: 100%; height: 50px; background: #00b415;text-align: center;
 align-items: center; justify-content: center; font-size: 16px; color: #ffffff; border-radius: 8px;}
 
 
