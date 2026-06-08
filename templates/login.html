@@ -1,49 +1,55 @@
 {% extends 'layout/common_layout.html' %}
 {% block title %} 투개더 로그인 {% endblock %}
 {% block css %}
-<link rel = "stylesheet" href = "{{url_for('static', filename = 'css/login.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
 {% endblock %}
 
 {% block header %}
-  로그인 페이지 <img src ="{{url_for('static', filename='svg/dog_foot.svg')}}" class = "text_icon">
+  로그인 페이지 <img src="{{url_for('static', filename='svg/dog_foot.svg')}}" class="text-icon">
 {% endblock %}
 
 {% block content %}
-    <div class = "logo_container">
-      <img src = "{{url_for('static', filename='img/togater_log(none_back).png')}}" class = "main_logo" alt="메인 로고">
-    </div>
+  <div class="logo-container">
+    <img src="{{url_for('static', filename='img/togater_log(none_back).png')}}" class="main-logo" alt="메인 로고">
+  </div>
 
-  <div class = "contents_container">
-    <form action= "/login" method="POST" class = "login_inp_container">
-      <input type="text" inputmode="numeric" name="order_number" class = "order_number" placeholder="네이버 주문번호" required>
-      <button type="button" class="btn-help" id="btnOpenModal">주문번호 확인 방법 ⓘ</button>
-      <button class = "login_btn">로그인<img src ="{{url_for('static', filename='svg/dog_foot.svg')}}" class = "text_icon"></button>
+  <div class="contents-container">
+    <form action="/login" method="POST" class="login-inp-container">
+      <input type="text" inputmode="numeric" name="order_number" class="order-number" placeholder="네이버 주문번호" required>
+      <button type="button" class="btn-help" id="btn-open-modal">주문번호 확인 방법 ⓘ</button>
+      <button class="login-btn">로그인<img src="{{url_for('static', filename='svg/dog_foot.svg')}}" class="text-icon"></button>
+    </form>
 
-    <div class = "bef_reservataion_container">
-      <div class = "reservation_divider">
+    <div class="bef-reservation-container">
+      <div class="reservation-divider">
         투개더 예약 전이라면?
       </div>
-      <a href = "https://smartstore.naver.com/haru_space/products/13141237083" class = "reservation_btn">
+      <a href="https://smartstore.naver.com/haru_space/products/13141237083" class="reservation-btn">
         투개더 예약하러가기
       </a>
 
-      <div class = "question_btn">
+      <div class="question-btn" id="btn-open-faq" style="cursor: pointer;">
         자주하는 질문
       </div>
     </div>
   </div>
 
-  <div class = "footer">
+  <div class="footer">
     <p>
-      <a href = "#" class = "footer-link" id = "open-terms">이용안내</a>|
-      <a href = "#" class = "footer-link" id = "open-privacy">개인정보처리방침</a>|
-      <a href = "#" class = "footer-link" id = "open-copyright">저작권정책</a>
+      <a href="#" class="footer-link" id="open-terms">이용안내</a>|
+      <a href="#" class="footer-link" id="open-privacy">개인정보처리방침</a>|
+      <a href="#" class="footer-link" id="open-copyright">저작권정책</a>
       <br>
       투개더 운영진
-      <a href = "tel: 070-7585-1136">문의전화 : 070-7585-1136</a><br>
+      <a href="tel:070-7585-1136">문의전화 : 070-7585-1136</a><br>
       © 2026 TOGATHER. All rights reserved.
     </p>
   </div>
 
-  </div>
+  {% include 'layout/modal_layout.html' %}
+
+{% endblock %}
+
+{% block script %}
+  <script src="{{url_for('static', filename='js/common_modal.js')}}"></script>
 {% endblock %}

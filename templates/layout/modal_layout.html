@@ -1,0 +1,14 @@
+<dialog id = "faq-modal" class = "custom-modal">
+  <header class = "modal-header">
+    {% block modal_header %}
+    <h3>기본 모달입니다</h3>
+    {% endblock %}
+  </header>
+
+  <div class = "modal-body">
+    {% block modal_content %}
+    {% endblock %}
+  </div>
+
+  <button type = "button" id = "btn-close-faq" class = "close-modal-btn">닫기</button>
+</dialog>
