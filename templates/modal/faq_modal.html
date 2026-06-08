@@ -1,1 +1,10 @@
-{% extend 'layout/modal_layout.html' %}
+{% extends 'layout/modal_layout.html' %}
+
+{% block modal_header %}
+  <h3>자주 하는 질문</h3>
+{% endblock %}
+
+{% block modal_content %}
+  <p>질문 1: 예약은 어떻게 하나요?</p>
+  <p>답변 1: 실시간 예약 바로가기 버튼을 이용해주세요.</p>
+{% endblock %}
