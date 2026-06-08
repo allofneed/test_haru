@@ -17,24 +17,27 @@
     <form action="/login" method="POST" class="login-inp-container">
       <input type="text" inputmode="numeric" name="order_number" class="order-number" placeholder="네이버 주문번호" required>
       <button type="button" class="btn-help" id="btn-open-modal">주문번호 확인 방법 ⓘ</button>
-      <button class="login-btn">로그인<img src="{{url_for('static', filename='svg/dog_foot.svg')}}" class="text-icon"></button>
+      <button type="submit" class="login-btn">
+        인증 및 로그인 <img src="{{url_for('static', filename='svg/dog_foot.svg')}}" class="text-icon btn-paw">
+      </button>
     </form>
 
     <div class="bef-reservation-container">
       <div class="reservation-divider">
-        투개더 예약 전이라면?
+        아직 예약 전이신가요?
       </div>
-      <a href="https://smartstore.naver.com/haru_space/products/13141237083" class="reservation-btn">
-        투개더 예약하러가기
+      
+      <a href="https://smartstore.naver.com/haru_space/products/13141237083" class="sub-btn reservation-link">
+        실시간 예약 바로가기
       </a>
 
-      <div class="question-btn" id="btn-open-faq" style="cursor: pointer;">
-        자주하는 질문
+      <div class="sub-btn question-btn" id="btn-open-faq">
+        자주하는 질문 확인
       </div>
     </div>
   </div>
+  
   {% include 'layout/modal_layout.html' %}
-
 {% endblock %}
 
 {% block script %}

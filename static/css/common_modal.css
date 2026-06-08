@@ -1,0 +1,15 @@
+.custom-modal {
+  width: 85%;            
+  max-width: 350px;       
+  border: none;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+.custom-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  max-width: 430px; 
+  margin: 0 auto; 
+}
