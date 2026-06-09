@@ -1,5 +1,5 @@
 /* /login-page 내에서만 배경이미지 변경 */
-.mobile-container { overflow: hidden; box-sizing: border-box; background-image: url('/static/img/togather_background.png'); background-size: cover; background-position: center; }
+.mobile-container { overflow: hidden; box-sizing: border-box; background-image: var(--bg-image); background-size: contain; background-position: center; background-repeat: no-repeat;}
 
 /* top-headerpart */
 .header { text-align: center; font-size: 18px; padding: 20px 0; margin-bottom: 10px; color: white; }

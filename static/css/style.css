@@ -28,6 +28,11 @@ body{
     min-height: 100vh;
     margin: 0 auto;
     background-color: #fffeee;
+  background-image: var(--bg-image, none); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
     position: relative;
