@@ -9,6 +9,13 @@ position: fixed; top:50%; left: 50%; transform: translate(-50%, -50%);}
 .close-modal-btn{width:100%; padding: 12px; font-size:14px; font-weight: 700; border:none; border-radius: 10px;
 background: #f1f1f1; color: #444444; cursor: pointer; transition: all 0.2s ease; text-align: center;}
 
+/* 주문 번호 확인 */
+#checkwaynum-modal .tab-menu { display: flex; gap: 0; border-bottom: 2px solid #f1f1f1; margin-bottom: 20px; width: 100%; }
+#checkwaynum-modal .tab-btn { flex: 1; padding: 12px 5px; font-size: 14px; font-weight: 500; border: none; background: transparent; color: #aaaaaa; cursor: pointer; text-align: center; transition: all 0.2s ease; position: relative; bottom: -2px; border-bottom: 2px solid transparent; }
+#checkwaynum-modal .tab-btn.active { color: #222222; font-weight: bold; border-bottom: 2px solid #222222; }
+#checkwaynum-modal .tab-content { display: none; }
+#checkwaynum-modal .tab-content.active { display: block; animation: fadeInFAQ 0.3s ease forwards; }
+
 /* 자주하는 질문 */
 #faq-modal .tap-menu{display:flex; gap:0; border-bottom: 2px solid #f1f1f1; margin-bottom: 20px; width: 100%;}
 #faq-modal .tab-btn{flex:1; padding: 12px 5px; font-size: 14px; font-weight: 500; border:none; background: transparent; color: #aaaaaa;

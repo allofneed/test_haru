@@ -1,0 +1,21 @@
+{% extends 'layout/modal_layout.html' %}
+{% block modal_id %}checkwaynum-modal{% endblock %}
+
+{% block modal_header %}
+  <h3>주문 번호 확인 방법</h3>
+
+  <div class="tab-menu">
+    <button type="button" class="tab-btn active" data-tab="pc-way">PC</button>
+    <button type="button" class="tab-btn" data-tab="mobile-way">모바일</button>
+  </div>
+{% endblock %}
+
+{% block modal_content %}
+  <div id="pc-way" class="tab-content active">
+    pc 방법 영상 넣기
+  </div>
+
+  <div id="mobile-way" class="tab-content">
+    모바일 영상 넣기
+  </div>
+{% endblock %}

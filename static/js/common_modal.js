@@ -1,5 +1,9 @@
 // 로그인 페이지 모달 연결 
 document.addEventListener("DOMContentLoaded", () => {
+
+  const checkWayBtn = document.getElementById('checkway-number');
+  const WayNumModal = document.getElementById('checkwaynum-modal')
+
   const faqOpenBtn = document.getElementById('btn-faq');
   const faqModal = document.getElementById('faq-modal');
 
@@ -11,6 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const copyrightOpenBtn = document.getElementById('open-copyright');
   const copyrightModal = document.getElementById('copyright-modal')
+
+  if (checkWayBtn && WayNumModal) {
+    checkWayBtn.addEventListener('click', () =>{
+      WayNumModal.showModal();
+    });
+  }
 
   if (faqOpenBtn && faqModal) {
     faqOpenBtn.addEventListener('click', () => {
@@ -51,6 +61,30 @@ document.addEventListener("DOMContentLoaded", () => {
 // 자주하는 질문 탭
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.querySelector('#faq-modal');
+    if (!modal) return;
+
+    const tabButtons = modal.querySelectorAll('.tab-btn');
+    const tabContents = modal.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            this.classList.add('active');
+
+            const targetId = this.getAttribute('data-tab');
+            const targetContent = modal.querySelector(`#${targetId}`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
+});
+
+// 주문 번호 확인 방법 탭 기능
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.querySelector('#checkwaynum-modal');
     if (!modal) return;
 
     const tabButtons = modal.querySelectorAll('.tab-btn');
