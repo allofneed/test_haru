@@ -1,5 +1,19 @@
+/* 모달 공통 사항 */
 .custom-modal{width: 85%; max-width: 350px; border: none; border-radius: 12px; padding: 25px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.3); box-sizing: border-box; background-color: #ffffff;
 position: fixed; top:50%; left: 50%; transform: translate(-50%, -50%);}
 
 .custom-modal::backdrop{background-color: rgba(0, 0, 0, 0.6); max-width: 430px;margin: 0 auto;}
+.modal-header h3{margin-top:0; margin-bottom: 20px; border-bottom: 1px solid black; padding-bottom: 10px;}
+.modal-body{margin: 15px 0;}
+.close-modal-btn{width:100%; padding: 12px; font-size:14px; font-weight: 700; border:none; border-radius: 10px;
+background: #f1f1f1; color: #444444; cursor: pointer; transition: all 0.2s ease; text-align: center;}
+
+/* 자주하는 질문 */
+#faq-modal .tap-menu{display:flex; gap:0; border-bottom: 2px solid #f1f1f1; margin-bottom: 20px; width: 100%;}
+#faq-modal .tab-btn{flex:1; padding: 12px 5px; font-size: 14px; font-weight: 500; border:none; background: transparent; color: #aaaaaa;
+cursor: pointer; text-align: center; transition: all 0.2s ease; position: relative; bottom: -2px; border-bottom: 2px solid transparent;}
+#faq-modal .tab-btn.active { color: #222222; font-weight: bold; border-bottom: 2px solid #222222; }
+#faq-modal .tab-content { display: none; }
+#faq-modal .tab-content.active { display: block; animation: fadeInFAQ 0.3s ease forwards; }
+@keyframes fadeInFAQ { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }

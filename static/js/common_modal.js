@@ -1,3 +1,4 @@
+// 로그인 페이지 모달 연결 
 document.addEventListener("DOMContentLoaded", () => {
   const faqOpenBtn = document.getElementById('btn-faq');
   const faqModal = document.getElementById('faq-modal');
@@ -45,4 +46,28 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
   })
+});
+
+// 자주하는 질문 탭
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.querySelector('#faq-modal');
+    if (!modal) return;
+
+    const tabButtons = modal.querySelectorAll('.tab-btn');
+    const tabContents = modal.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            this.classList.add('active');
+
+            const targetId = this.getAttribute('data-tab');
+            const targetContent = modal.querySelector(`#${targetId}`);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+        });
+    });
 });
