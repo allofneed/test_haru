@@ -28,9 +28,20 @@ border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 4px
 #faq-modal .colum2-table td { padding: 10px 6px; color: #444444; border-bottom: 1px solid #f1f1f1; line-height: 1.4; }
 #faq-modal .colum2-table th:last-child, .colum2-table td:last-child { text-align: right; padding-right: 12px; }
 
-.faq-modal .notice-table.notice-table { width: 100%; border-collapse: collapse; margin-top: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; border-style: hidden; box-shadow: 0 0 0 1px #e2e8f0; }
-.notice-table th { text-align: center; padding: 10px 14px; font-size: 15px; font-weight: 700; color: #000000; border-bottom: 1px solid #e2e8f0; }
-.notice-table td { padding: 12px 14px; }
-.notice-list { padding-left: 18px; margin: 0; }
-.notice-list li { font-size: 12.5px; color: #16181b; line-height: 1.6; margin-bottom: 4px;  }
-.notice-list li:last-child { margin-bottom: 0; }
+#faq-modal .faq-bullet-list { margin: 8px 0 0 0; padding-left: 20px; list-style-type: disc; font-size: 14px; color: #555; }
+#faq-modal .faq-bullet-list li { margin-bottom: 6px; line-height: 1.5; }
+#faq-modal .faq-bullet-list strong { color: #ff4d4f; }
+
+#faq-modal .faq-refund-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; text-align: center; }
+#faq-modal .faq-refund-table th { background-color: #f5f5f5; color: #333; font-weight: 600; padding: 10px; border-top: 2px solid #333; border-bottom: 1px solid #ddd; }
+#faq-modal .faq-refund-table td { padding: 12px 10px; border-bottom: 1px solid #eee; color: #555; }
+#faq-modal .text-highlight { color: #2db400; }
+#faq-modal .text-danger { color: #ff4d4f; }
+#faq-modal .table-notice { font-size: 12px; color: #888; margin-top: 6px; }
+
+#faq-modal .notice-table.notice-table { width: 100%; border-collapse: collapse; margin-top: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; border-style: hidden; box-shadow: 0 0 0 1px #e2e8f0; }
+#faq-modal .notice-table th { text-align: center; padding: 10px 14px; font-size: 15px; font-weight: 700; color: #000000; border-bottom: 1px solid #e2e8f0; }
+#faq-modal .notice-table td { padding: 12px 14px; }
+#faq-modal .notice-list { padding-left: 18px; margin: 0; }
+#faq-modal .notice-list li { font-size: 12.5px; color: #16181b; line-height: 1.6; margin-bottom: 4px;  }
+#faq-modal .notice-list li:last-child { margin-bottom: 0; }
