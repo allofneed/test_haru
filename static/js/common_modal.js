@@ -90,10 +90,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = modal.querySelectorAll('.tab-btn');
     const tabContents = modal.querySelectorAll('.tab-content');
 
+    function playActiveVideo() {
+        const activeVideo = modal.querySelector('.tab-content.active video');
+        if (activeVideo) {
+            activeVideo.currentTime = 0;
+            activeVideo.play().catch(err => console.log(err));
+        }
+    }
+
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === 'class' || mutation.attributeName === 'style') {
+                const isVisible = modal.classList.contains('show') || modal.style.display === 'block' || window.getComputedStyle(modal).display !== 'none';
+                if (isVisible) {
+                    playActiveVideo();
+                }
+            }
+        });
+    });
+    observer.observe(modal, { attributes: true });
+
     tabButtons.forEach(button => {
         button.addEventListener('click', function() {
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                const video = content.querySelector('video');
+                if (video) video.pause();
+            });
 
             this.classList.add('active');
 
@@ -101,6 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetContent = modal.querySelector(`#${targetId}`);
             if (targetContent) {
                 targetContent.classList.add('active');
+                const currentVideo = targetContent.querySelector('video');
+                if (currentVideo) {
+                    currentVideo.currentTime = 0;
+                    currentVideo.play().catch(err => console.log(err));
+                }
             }
         });
     });
