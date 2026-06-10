@@ -52,3 +52,6 @@ border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); margin-bottom: 4px
 #faq-modal .notice-list { padding-left: 18px; margin: 0; }
 #faq-modal .notice-list li { font-size: 12.5px; color: #16181b; line-height: 1.6; margin-bottom: 4px;  }
 #faq-modal .notice-list li:last-child { margin-bottom: 0; }
+
+/* 영상 css */
+.tab-content { border: 1px solid rgba(0, 0, 0, 0.08); border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); overflow: hidden; background-color: #ffffff; padding: 16px; }
