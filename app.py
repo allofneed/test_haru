@@ -17,6 +17,10 @@ def login_process():
 def main_page():
     return render_template('index.html')
 
+@app.route('/reservationinf')
+def reservation_inf():
+    return render_template('function/reservation_inf.html')
+
 if __name__ == '__main__':
     from livereload import Server
     app.debug = True
