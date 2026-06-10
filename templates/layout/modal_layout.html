@@ -1,4 +1,4 @@
-<dialog id = "faq-modal" class = "custom-modal">
+<dialog id = {% block modal_id %}{% endblock %} class = "custom-modal">
   <header class = "modal-header">
     {% block modal_header %}
     <h3>기본 모달입니다</h3>
@@ -10,5 +10,5 @@
     {% endblock %}
   </div>
 
-  <button type = "button" id = "btn-close-faq" class = "close-modal-btn">닫기</button>
+  <button type = "button" id = "close-modal" class = "close-modal-btn">닫기</button>
 </dialog>

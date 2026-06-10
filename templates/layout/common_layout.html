@@ -40,9 +40,9 @@
 
   <div class = "footer">
     <p>
-      <a href="#" class="footer-link" id="open-terms">이용안내</a>|
-      <a href="#" class="footer-link" id="open-privacy">개인정보처리방침</a>|
-      <a href="#" class="footer-link" id="open-copyright">저작권정책</a>
+      <a href="#" class="footer-link" id="open-terms">[이용안내]</a>|
+      <a href="#" class="footer-link" id="open-privacy">[개인정보처리방침]</a>|
+      <a href="#" class="footer-link" id="open-copyright">[저작권정책]</a>
       <br>
       투개더 운영진
       <a href="tel:070-7585-1136">문의전화 : 070-7585-1136</a><br>
@@ -54,6 +54,10 @@
 
     {% block bottom_nav %}
     {% endblock %}
+
+    {% include 'modal/open_terms.html' %}
+    {% include 'modal/open_privacy.html' %}
+    {% include 'modal/open_copyright.html' %}
   </div>
 
 
