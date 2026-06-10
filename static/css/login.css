@@ -1,5 +1,5 @@
 /* /login-page 내에서만 배경이미지 변경 */
-.mobile-container { overflow: hidden; box-sizing: border-box; background-image: var(--bg-image); background-size: contain; background-position: center; background-repeat: no-repeat;}
+.mobile-container { overflow: hidden; box-sizing: border-box; background-image: var(--bg-image); background-size: cover; background-position: bottom center; background-repeat: no-repeat; min-height: 100vh; background-attachment: fixed;}
 
 /* top-headerpart */
 .header { text-align: center; font-size: 18px; padding: 20px 0; margin-bottom: 10px; color: white; }
