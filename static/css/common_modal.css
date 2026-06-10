@@ -17,3 +17,4 @@ cursor: pointer; text-align: center; transition: all 0.2s ease; position: relati
 #faq-modal .tab-content { display: none; }
 #faq-modal .tab-content.active { display: block; animation: fadeInFAQ 0.3s ease forwards; }
 @keyframes fadeInFAQ { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+#faq-modal .faq-item{display:flex; flex-direction: column; margin-bottom: 10px; border-bottom: 1px solid #aaaaaa; padding-bottom: 10px; gap: 10px;}

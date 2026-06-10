@@ -5,23 +5,44 @@
   <h3>자주 하는 질문</h3>
 
   <div class = "tap-menu">
-    <button type = "button" class = "tab-btn active" data-tab="tab-reservation">예약방법</button>
-    <button type = "button" class = "tab-btn" data-tab="tab-notice">주의사항</button>
-    <button type = "button" class = "tab-btn" data-tab="tab-contact">담당자 연락처</button>
+    <button type = "button" class = "tab-btn active" data-tab="tab-reservation">현장 접수</button>
+    <button type = "button" class = "tab-btn" data-tab="tab-notice">탑승 조건</button>
+    <button type = "button" class = "tab-btn" data-tab="tab-contact">예약/취소</button>
+    <button type = "button" class = "tab-btn" data-tab="tab-resevation">기타문의</button>
   </div>
 {% endblock %}
 
 {% block modal_content %}
   <div id="tab-reservation" class="tab-content active">
-    <h4>📅 실시간 예약 방법</h4>
-    <p>1. 네이버 스마트스토어에 접속합니다.</p>
-    <p>2. 원하는 날짜와 시간을 선택 후 결제하면 완료!</p>
+    <div class = "faq-item">
+      <div class = "faq-question">
+        <h4>Q. 온라인으로 다 매진되었는데 현장 접수가 가능한가요?</h4>
+      </div>
+      <div class = "faq-answer">
+        <p>A. </p>
+      </div>
+    </div>
+
+    <div class = "faq-item">
+      <div class = "faq-question">
+        <h4>Q. 온라인으로 다 매진되었는데 현장 접수가 가능한가요?</h4>
+      </div>
+      <div class = "faq-answer">
+        <p>A. </p>
+      </div>
+    </div>
   </div>
 
   <div id="tab-notice" class="tab-content">
     <h4>⚠️ 이용 시 주의사항</h4>
     <p>1. 입실 시간은 예약 10분 전부터 가능합니다.</p>
     <p>2. 내부 기물 파손 시 비용이 청구될 수 있습니다.</p>
+  </div>
+
+  <div id="tab-contact" class="tab-content">
+    <h4>📞 담당자 연락처</h4>
+    <p>• 고객센터: 010-XXXX-XXXX</p>
+    <p>• 카카오톡 문의: @togettheriding</p>
   </div>
 
   <div id="tab-contact" class="tab-content">
