@@ -5,14 +5,14 @@
   <h3>주문 번호 확인 방법</h3>
 
   <div class="tab-menu">
-    <button type="button" class="tab-btn active" data-tab="mobile-way active">모바일</button>
+    <button type="button" class="tab-btn active" data-tab="mobile-way">모바일</button>
     <button type="button" class="tab-btn" data-tab="pc-way">PC</button>
   </div>
 {% endblock %}
 
 {% block modal_content %}
 
-  <div id="mobile-way" class="tab-content">
+  <div id="mobile-way" class="tab-content active">
     <video width="100%" autoplay muted loop playsinline>
       <source src="{{ url_for('static', filename='video/mobile-guid.mp4')}}" type="video/mp4">
       브라우저가 비디오 태그를 지원하지 않습니다.
