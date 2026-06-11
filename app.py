@@ -21,6 +21,10 @@ def main_page():
 def reservation_inf():
     return render_template('function/reservation_inf.html')
 
+@app.route('/message')
+def message():
+    return render_template('pages/message.html')
+
 if __name__ == '__main__':
     from livereload import Server
     app.debug = True
