@@ -1,9 +1,33 @@
 /* 인터넷 주소 대신 내 컴퓨터(서버)에 있는 파일 불러오기 */
+/* 💡 Paperology - Regular (기본 굵기) */
 @font-face {
-    font-family: 'Memoment';
-    /* 🚨 경로 주의: css 폴더에서 한 칸 뒤로(../) 나간 다음 fonts 폴더로 들어갑니다! */
-    src: url('../fonts/MemomentKkukkukk.ttf') format('truetype');
-    font-weight: normal;
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Regular.woff') format('woff');
+    font-weight: 400; /* Regular = 400 */
+    font-style: normal;
+}
+
+/* 💡 Pretendard - Medium (약간 두꺼운 굵기) */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Medium.woff') format('woff');
+    font-weight: 500; /* Medium = 500 */
+    font-style: normal;
+}
+
+/* 💡 Pretendard - SemiBold (본문 강조용) */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600; /* SemiBold = 600 */
+    font-style: normal;
+}
+
+/* 💡 Pretendard - Bold (제목용 아주 두꺼운 굵기) */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Bold.woff') format('woff');
+    font-weight: 700; /* Bold = 700 */
     font-style: normal;
 }
 
