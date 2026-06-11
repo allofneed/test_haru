@@ -1,5 +1,5 @@
 /* /login-page 내에서만 배경이미지 변경 */
-.mobile-container { overflow: hidden; box-sizing: border-box; background-image: var(--bg-image); background-size: cover; background-position: bottom center; background-repeat: no-repeat; min-height: 100vh; background-attachment: fixed;}
+.mobile-container { width: 100%; max-width: 430px; margin: 0 auto; min-height: 100vh; box-sizing: border-box; overflow-x: hidden; background-image: var(--bg-image); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; display: flex; flex-direction: column; position: relative; box-shadow: 0 0 30px rgba(0, 0, 0, 0.08); background-color: #fafafa; }
 
 /* top-headerpart */
 .header { text-align: center; font-size: 18px; padding: 20px 0; margin-bottom: 10px; color: white; }
