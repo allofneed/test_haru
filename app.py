@@ -29,4 +29,4 @@ if __name__ == '__main__':
     from livereload import Server
     app.debug = True
     server = Server(app.wsgi_app)
-    server.serve(port=5003)
+    server.serve(port=5002)
