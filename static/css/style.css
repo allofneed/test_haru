@@ -1,72 +1,42 @@
-/* 인터넷 주소 대신 내 컴퓨터(서버)에 있는 파일 불러오기 */
-/* 💡 Paperology - Regular (기본 굵기) */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('../fonts/Pretendard-Regular.woff') format('woff');
-    font-weight: 400; /* Regular = 400 */
-    font-style: normal;
-}
-
-/* 💡 Pretendard - Medium (약간 두꺼운 굵기) */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('../fonts/Pretendard-Medium.woff') format('woff');
-    font-weight: 500; /* Medium = 500 */
-    font-style: normal;
-}
-
-/* 💡 Pretendard - SemiBold (본문 강조용) */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('../fonts/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600; /* SemiBold = 600 */
-    font-style: normal;
-}
-
-/* 💡 Pretendard - Bold (제목용 아주 두꺼운 굵기) */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('../fonts/Pretendard-Bold.woff') format('woff');
-    font-weight: 700; /* Bold = 700 */
-    font-style: normal;
-}
+/* 1. 구글 Noto Sans KR 폰트 불러오기 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 
 /* 불러온 폰트를 전체 화면에 덮어씌우기 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Memoment', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif; /* 전체 폰트 적용 */
 }
 
-body{
+body {
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     min-height: 100vh;
 }
 
-.mobile-container{
+.mobile-container {
     width: 100%;
     max-width: 430px;
     min-height: 100vh;
     margin: 0 auto;
     background-color: #fffeee;
-  background-image: var(--bg-image, none); 
-    background-size: cover;
+    background-image: var(--bg-image, none); 
+    background-size: 100% 100%; /* PC 화면에서도 일러스트가 잘리지 않게 100% 압축 고정 */
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* 모바일 브라우저 찌그러짐 버그 방지를 위해 background-attachment: fixed는 제거했습니다 */
 
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    box-shadow: 0 0 20px rgba(0,0,0,0.08); /* 조금 더 부드러운 그림자 톤 조절 */
     position: relative;
 
     display: flex;
     flex-direction: column;
 }
 
-.footer {margin-top: auto; text-align: center; padding: 20px 0 50px;}
-.footer p {font-size: 11px; color: #000000; line-height: 1.7;}
-.footer-link{color: #adb5bd; text-decoration: none; margin: 0 5px;}
-.footer-link:hover{color: #495057;}
-.footer a{text-decoration: none; color: inherit;}
+.footer { margin-top: auto; text-align: center; padding: 20px 0 50px; }
+.footer p { font-size: 11px; color: #000000; line-height: 1.7; font-weight: 500; } /* 폰트 가독성을 위해 자잘한 굵기 튜닝 */
+.footer-link { color: #5b626e; text-decoration: none; margin: 0 5px; font-weight: 700; } /* 미니멀 그레이 푸터 링크 색상 강조 */
+.footer-link:hover { color: #111111; text-decoration: underline; }
+.footer a { text-decoration: none; color: inherit; }
