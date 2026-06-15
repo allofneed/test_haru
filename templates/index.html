@@ -2,88 +2,26 @@
 {% block title %} 투게더 메인 {% endblock %}
 
 {% block css %}
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+{% endblock %}s
+
+{% block header %}
+  <div class = "header-content">
+    <div class = "logo">
+      <img src="{{ url_for('static', filename='img/logo_summer(none_back).svg')}}" alt="투게더 로고" class="logo-image">
+    </div>
+    <div class = "user-info">
+      홍길동
+    </div>
+  </div>
+
+  <div class = "search-bar">
+    <input type="text" placeholder="주변 애완견 동반 카페는?" class="search-input">
+  </div>
 {% endblock %}
 
 {% block content %}
-<div class="header">
-  홈
-</div>
-
-<div class="greeting-section">
-  <h2><span class="highlight"><strong>홍길동</strong>  홍길동</span> 보호자님,<br>시흥 방문을 환영합니다!</h2>
-</div>
-
-<div class="map-wrapper">
-  <div class="search-badge"><ion-icon name="locate"></ion-icon> 주변 탐색 중</div>
-  
-  <div id="realMap" style="width: 100%; height: 100%; z-index: 1;"></div>
-
-  <div class="gps-fab" id="gpsBtn">
-    <ion-icon name="paw"></ion-icon>
-  </div>
-</div>
-
-<div class="content-wrapper">
-  <div class="filter-chips">
-    <button class="chip active">전체</button>
-    <button class="chip">카페</button>
-    <button class="chip">음식점</button>
-    <button class="chip">숙소</button>
-  </div>
-
-  <div class="store-slider">
-    <div class="store-card">
-      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80');"></div>
-      <div class="card-info">
-        <div class="c-title">멍멍카페 시흥점</div>
-        <div class="c-addr"><ion-icon name="location-outline"></ion-icon> 시흥시 정왕동 123-4</div>
-        <div class="c-badge"><ion-icon name="ticket-outline"></ion-icon> 음료 10% 할인</div>
-        <div class="c-bottom">
-          <div class="c-dist"><ion-icon name="walk-outline"></ion-icon> 134m</div>
-          <button class="c-btn">방문하기</button>
-        </div>
-      </div>
-    </div>
-    
-    <div class="store-card">
-      <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=400&q=80');"></div>
-      <div class="card-info">
-        <div class="c-title">댕댕이 다이닝</div>
-        <div class="c-addr"><ion-icon name="location-outline"></ion-icon> 시흥시 장현동 567-8</div>
-        <div class="c-badge"><ion-icon name="ticket-outline"></ion-icon> 애견 수제 간식 증정</div>
-        <div class="c-bottom">
-          <div class="c-dist"><ion-icon name="walk-outline"></ion-icon> 240m</div>
-          <button class="c-btn">방문하기</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="qrModal" class="qr-modal-overlay">
-  <div class="qr-modal-header">
-    <ion-icon name="close-outline" id="closeQrBtn" class="close-btn"></ion-icon>
-    <h3>매장 QR 스캔</h3>
-    <div style="width: 24px;"></div> </div>
-  
-  <div class="qr-scanner-area">
-    <div class="scanner-frame">
-      <video 
-        id="cameraPreview" 
-        autoplay 
-        playsinline 
-        muted 
-        webkit-playsinline
-        style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 0;">
-      </video>
-      
-      <div class="scan-line" style="z-index: 2;"></div> 
-    </div>
-    <p>매장에 비치된 QR코드를<br>사각 프레임 안에 맞춰주세요.</p>
-  </div>
-</div>
+<h3>투개더 방문 자랑</h3>
 {% endblock %}
 
 {% block bottom_nav %}
@@ -91,7 +29,6 @@
 {% endblock %}
 
 {% block script %}
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="{{ url_for('static', filename='js/bottom_nav.js') }}"></script>
   <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 {% endblock %}
